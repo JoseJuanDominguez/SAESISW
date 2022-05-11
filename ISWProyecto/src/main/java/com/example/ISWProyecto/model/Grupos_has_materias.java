@@ -18,6 +18,46 @@ public class Grupos_has_materias {
 	private String grupos_grupo;
 	
 	private String materias_idmateria;
+	
+	private String dia;
+	
+	private String hora_inicio;
+	
+	private String hora_fin;
+	
+	private String salon;
+	
+	public String getDia() {
+		return dia;
+	}
+
+	public void setDia(String dia) {
+		this.dia = dia;
+	}
+
+	public String getHora_inicio() {
+		return hora_inicio;
+	}
+
+	public void setHora_inicio(String hora_inicio) {
+		this.hora_inicio = hora_inicio;
+	}
+
+	public String getHora_fin() {
+		return hora_fin;
+	}
+
+	public void setHora_fin(String hora_fin) {
+		this.hora_fin = hora_fin;
+	}
+
+	public String getSalon() {
+		return salon;
+	}
+
+	public void setSalon(String salon) {
+		this.salon = salon;
+	}
 
 	public String getGrupos_grupo() {
 		return grupos_grupo;
@@ -36,4 +76,3 @@ public class Grupos_has_materias {
 	}
 
 }
-

@@ -36,21 +36,13 @@ public class Alumno {
 	
 	private String cartilla; 
 	
-	private String pasaporte; 
+	private String pasaporte;
+	
+	private String contrasena;
 	
 	private int direcciones_iddireccion;
 	
-	private Double datosmedicos_num_seg_social;
-	
-	private String password;
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	private int datosmedicos_num_seg_social;
 
 	public String getBoleta() {
 		return boleta;
@@ -132,6 +124,14 @@ public class Alumno {
 		this.pasaporte = pasaporte;
 	}
 
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
 	public int getDirecciones_iddireccion() {
 		return direcciones_iddireccion;
 	}
@@ -140,15 +140,13 @@ public class Alumno {
 		this.direcciones_iddireccion = direcciones_iddireccion;
 	}
 
-	public Double getDatosmedicos_num_seg_social() {
+	public int getDatosmedicos_num_seg_social() {
 		return datosmedicos_num_seg_social;
 	}
 
-	public void setDatosmedicos_num_seg_social(Double datosmedicos_num_seg_social) {
+	public void setDatosmedicos_num_seg_social(int datosmedicos_num_seg_social) {
 		this.datosmedicos_num_seg_social = datosmedicos_num_seg_social;
 	}
-	
-	
 	
 	
 	

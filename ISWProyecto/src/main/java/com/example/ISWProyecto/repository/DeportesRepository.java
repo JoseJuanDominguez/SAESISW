@@ -8,8 +8,8 @@ import com.example.ISWProyecto.model.Deportes;
 
 public interface DeportesRepository extends JpaRepository<Deportes, String> {
 	
-	@Query("SELECT a FROM Deportes a where a.iddeporte = :iddeporte and a.nombre = :nombre")
-	Deportes findDeportes(@Param("iddeporte") int iddeporte, @Param("nombre") String nombre);
+	@Query("SELECT a FROM Deportes a where a.iddeporte = :iddeporte")
+	Deportes findDeportes(@Param("iddeporte") int iddeporte);
 
 }
 

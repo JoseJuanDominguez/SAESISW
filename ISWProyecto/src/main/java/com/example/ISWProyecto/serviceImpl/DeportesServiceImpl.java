@@ -16,8 +16,8 @@ public class DeportesServiceImpl implements IDeportesService{
 	private DeportesRepository deportesRepository;
 
 	@Override
-	public Deportes findDeportes(int iddeporte, String nombre) {
-		return deportesRepository.findDeportes(iddeporte, nombre);
+	public Deportes findDeportes(int iddeporte) {
+		return deportesRepository.findDeportes(iddeporte);
 	}
 
 	@Override

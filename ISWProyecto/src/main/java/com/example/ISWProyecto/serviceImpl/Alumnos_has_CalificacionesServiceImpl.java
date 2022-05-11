@@ -16,9 +16,9 @@ public class Alumnos_has_CalificacionesServiceImpl implements IAlumnos_has_Calif
 
 
 	@Override
-	public Alumnos_has_Calificaciones findAlumnoHCById(String alumnos_boleta) {
+	public Alumnos_has_Calificaciones findAlumnoHCById(String alumnos_boleta, String calificaciones_materias_idmateria) {
 		
-		return alumnoshcRepository.findAlumnoHCById(alumnos_boleta);
+		return alumnoshcRepository.findAlumnoHCById(alumnos_boleta, calificaciones_materias_idmateria);
 	}
 	
 	@Override

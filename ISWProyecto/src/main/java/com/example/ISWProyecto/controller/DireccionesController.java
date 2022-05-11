@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.ISWProyecto.dto.DatosMedicosDto;
 import com.example.ISWProyecto.dto.DireccionesDto;
-import com.example.ISWProyecto.model.DatosMedicos;
 import com.example.ISWProyecto.model.Direcciones;
 import com.example.ISWProyecto.serviceImpl.DireccionesServiceImpl;
 

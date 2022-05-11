@@ -18,7 +18,15 @@ public class Maestros_has_gruposServiceImpl implements IMaestros_has_gruposServi
 	public Maestros_has_grupos findMaestros_has_grupos(String maestros_rfc, String grupos_grupo) {
 		return maestros_has_gruposRepository.findMaestros_has_grupos(maestros_rfc, grupos_grupo);
 	}
+	@Override
+	public Maestros_has_grupos findMaestros_rfc(String maestros_rfc) {
+		return maestros_has_gruposRepository.findMaestros_rfc(maestros_rfc);
+	}
 
+	@Override
+	public Maestros_has_grupos findGrupos_grupo(String grupos_grupo) {
+		return maestros_has_gruposRepository.findGrupos_grupo(grupos_grupo);
+	}
 	@Override
 	public List<Maestros_has_grupos> findAll() {
 		return maestros_has_gruposRepository.findAll();

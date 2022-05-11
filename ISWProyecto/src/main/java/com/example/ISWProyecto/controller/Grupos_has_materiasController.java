@@ -16,38 +16,56 @@ import com.example.ISWProyecto.serviceImpl.Grupos_has_materiasServiceImpl;
 @RestController
 @RequestMapping("/Grupos_has_materias")
 public class Grupos_has_materiasController {
-	
-	@Autowired 
+
+	@Autowired
 	private Grupos_has_materiasServiceImpl grupos_has_materiasService;
-	
-	@RequestMapping(value="/findGrupos_has_materias/{grupos_grupo}/{password}", method= RequestMethod.GET)
+
+	@RequestMapping(value="/findGrupos_has_materias/{grupos_grupo}/{materias_idmateria}", method= RequestMethod.GET)
 	public ResponseEntity<Grupos_has_materiasDto> findGrupos_has_materias(@PathVariable("grupos_grupo") String grupos_grupo, @PathVariable("materias_idmateria") String materias_idmateria){
 		Grupos_has_materias grupos_has_materias = grupos_has_materiasService.findGrupos_has_materias(grupos_grupo, materias_idmateria);
 		if(grupos_has_materias == null) {
-			return new ResponseEntity<Grupos_has_materiasDto>(Grupos_has_materiasDto.getInstance(grupos_has_materias), HttpStatus.NO_CONTENT); 
+			return new ResponseEntity<Grupos_has_materiasDto>(Grupos_has_materiasDto.getInstance(grupos_has_materias), HttpStatus.NO_CONTENT);
 		}
-		
+
 		Grupos_has_materiasDto grupos_has_materiasDto = Grupos_has_materiasDto.getInstance(grupos_has_materias);
 		return new ResponseEntity<Grupos_has_materiasDto>(grupos_has_materiasDto, HttpStatus.OK);
-		
+
 	}
-	
-	
-	
+
+	@RequestMapping(value="/findGrupos_grupo/{grupos_grupo}", method= RequestMethod.GET)
+	public ResponseEntity<Grupos_has_materiasDto> findGrupos_grupo(@PathVariable("grupos_grupo") String grupos_grupo){
+		Grupos_has_materias grupos_has_materias = grupos_has_materiasService.findGrupos_grupo(grupos_grupo);
+		if(grupos_has_materias == null) {
+			return new ResponseEntity<Grupos_has_materiasDto>(Grupos_has_materiasDto.getInstance(grupos_has_materias), HttpStatus.NO_CONTENT);
+		}
+
+		Grupos_has_materiasDto grupos_has_materiasDto = Grupos_has_materiasDto.getInstance(grupos_has_materias);
+		return new ResponseEntity<Grupos_has_materiasDto>(grupos_has_materiasDto, HttpStatus.OK);
+
+	}
+
+	@RequestMapping(value="/findMaterias_idmateria/{materias_idmateria}", method= RequestMethod.GET)
+	public ResponseEntity<Grupos_has_materiasDto> findMaterias_idmateria(@PathVariable("materias_idmateria") String materias_idmateria){
+		Grupos_has_materias grupos_has_materias = grupos_has_materiasService.findMaterias_idmateria(materias_idmateria);
+		if(grupos_has_materias == null) {
+			return new ResponseEntity<Grupos_has_materiasDto>(Grupos_has_materiasDto.getInstance(grupos_has_materias), HttpStatus.NO_CONTENT);
+		}
+
+		Grupos_has_materiasDto grupos_has_materiasDto = Grupos_has_materiasDto.getInstance(grupos_has_materias);
+		return new ResponseEntity<Grupos_has_materiasDto>(grupos_has_materiasDto, HttpStatus.OK);
+
+	}
+
 	@RequestMapping(value="/findAll", method=RequestMethod.GET)
 	public ResponseEntity<List<Grupos_has_materiasDto>> findAll(){
 		List<Grupos_has_materias> grupos_has_materias = grupos_has_materiasService.findAll();
 		if(grupos_has_materias.isEmpty()) {
 			return new ResponseEntity<List<Grupos_has_materiasDto>>(HttpStatus.NOT_FOUND);
 		}
-		
+
 		List<Grupos_has_materiasDto> grupos_has_materiasDto = Grupos_has_materiasDto.getInstance(grupos_has_materias);
 		return new ResponseEntity<List<Grupos_has_materiasDto>>(grupos_has_materiasDto, HttpStatus.OK);
-		
+
 	}
-	
-	
-
-
 }
 

@@ -32,7 +32,17 @@ public class MaestrosController {
 		
 	}
 	
-	
+	@RequestMapping(value="/findMaestroById/{rfc}", method= RequestMethod.GET)
+	public ResponseEntity<MaestrosDto> findMaestroById(@PathVariable("rfc") String rfc){
+		Maestros maestro = maestroService.findMaestroById(rfc);
+		if(maestro == null) {
+			return new ResponseEntity<MaestrosDto>(MaestrosDto.getInstance(maestro), HttpStatus.NO_CONTENT); 
+		}
+		
+		MaestrosDto maestroDto = MaestrosDto.getInstance(maestro);
+		return new ResponseEntity<MaestrosDto>(maestroDto, HttpStatus.OK);
+		
+	}
 	
 	@RequestMapping(value="/findAll", method=RequestMethod.GET)
 	public ResponseEntity<List<MaestrosDto>> findAll(){

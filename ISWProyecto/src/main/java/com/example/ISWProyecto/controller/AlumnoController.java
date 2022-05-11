@@ -20,9 +20,9 @@ public class AlumnoController {
 	@Autowired 
 	private AlumnoServiceImpl alumnoService;
 	
-	@RequestMapping(value="/findAlumno/{boleta}/{password}", method= RequestMethod.GET)
-	public ResponseEntity<AlumnoDto> findAlumno(@PathVariable("boleta") String boleta, @PathVariable("password") String password){
-		Alumno alumno = alumnoService.findAlumno(boleta, password);
+	@RequestMapping(value="/findAlumno/{boleta}/{contrasena}", method= RequestMethod.GET)
+	public ResponseEntity<AlumnoDto> findAlumno(@PathVariable("boleta") String boleta, @PathVariable("contrasena") String contrasena){
+		Alumno alumno = alumnoService.findAlumno(boleta, contrasena);
 		if(alumno == null) {
 			return new ResponseEntity<AlumnoDto>(AlumnoDto.getInstance(alumno), HttpStatus.NO_CONTENT); 
 		}

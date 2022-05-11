@@ -43,18 +43,14 @@ public class AlumnoDto {
 	@JsonProperty("pasaporte")
 	private String pasaporte;
 	
+	@JsonProperty("contrasena")
+	private String contrasena;
+	
 	@JsonProperty("direcciones_iddireccion")
 	private int direcciones_iddireccion;
 	
 	@JsonProperty("datosmedicos_num_seg_social")
-	private Double datosmedicos_num_seg_social;
-	
-	@JsonProperty("password")
-	private String password;
-	
-	
-	
-	
+	private int datosmedicos_num_seg_social;
 	
 
 
@@ -77,14 +73,7 @@ public class AlumnoDto {
 		return alumnoDto;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	public static List<AlumnoDto> getInstance(List<Alumno> alumnos) {
 		List<AlumnoDto> alumnosDto = new ArrayList<AlumnoDto>();
 		for( Alumno al: alumnos) {
@@ -93,7 +82,6 @@ public class AlumnoDto {
 		return alumnosDto;
 		
 	}
-	
 
 	public String getBoleta() {
 		return boleta;
@@ -175,6 +163,14 @@ public class AlumnoDto {
 		this.pasaporte = pasaporte;
 	}
 
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
 	public int getDirecciones_iddireccion() {
 		return direcciones_iddireccion;
 	}
@@ -183,30 +179,12 @@ public class AlumnoDto {
 		this.direcciones_iddireccion = direcciones_iddireccion;
 	}
 
-	public Double getDatosmedicos_num_seg_social() {
+	public int getDatosmedicos_num_seg_social() {
 		return datosmedicos_num_seg_social;
 	}
 
-	public void setDatosmedicos_num_seg_social(Double datosmedicos_num_seg_social) {
+	public void setDatosmedicos_num_seg_social(int datosmedicos_num_seg_social) {
 		this.datosmedicos_num_seg_social = datosmedicos_num_seg_social;
 	}
 	
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

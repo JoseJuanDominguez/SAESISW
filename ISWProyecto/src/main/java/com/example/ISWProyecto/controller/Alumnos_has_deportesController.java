@@ -32,7 +32,29 @@ public class Alumnos_has_deportesController {
 		return new ResponseEntity<Alumnos_has_deportesDto>(alumnos_has_deportesDto, HttpStatus.OK);
 		
 	}
-	
+	@RequestMapping(value="/findAlumnos_boleta/{alumnos_boleta}", method= RequestMethod.GET)
+	public ResponseEntity<Alumnos_has_deportesDto> findAlumnos_boleta(@PathVariable("alumnos_boleta") String alumnos_boleta){
+		Alumnos_has_deportes alumnos_has_deportes = alumnos_has_deportesService.findAlumnos_boleta(alumnos_boleta);
+		if(alumnos_has_deportes == null) {
+			return new ResponseEntity<Alumnos_has_deportesDto>(Alumnos_has_deportesDto.getInstance(alumnos_has_deportes), HttpStatus.NO_CONTENT);
+		}
+
+		Alumnos_has_deportesDto alumnos_has_deportesDto = Alumnos_has_deportesDto.getInstance(alumnos_has_deportes);
+		return new ResponseEntity<Alumnos_has_deportesDto>(alumnos_has_deportesDto, HttpStatus.OK);
+
+	}
+
+	@RequestMapping(value="/findDeportes_iddeporte/{deportes_iddeporte}", method= RequestMethod.GET)
+	public ResponseEntity<Alumnos_has_deportesDto> findDeportes_iddeporte(@PathVariable("deportes_iddeporte") int deportes_iddeporte){
+		Alumnos_has_deportes alumnos_has_deportes = alumnos_has_deportesService.findDeportes_iddeporte(deportes_iddeporte);
+		if(alumnos_has_deportes == null) {
+			return new ResponseEntity<Alumnos_has_deportesDto>(Alumnos_has_deportesDto.getInstance(alumnos_has_deportes), HttpStatus.NO_CONTENT);
+		}
+
+		Alumnos_has_deportesDto alumnos_has_deportesDto = Alumnos_has_deportesDto.getInstance(alumnos_has_deportes);
+		return new ResponseEntity<Alumnos_has_deportesDto>(alumnos_has_deportesDto, HttpStatus.OK);
+
+	}
 	@RequestMapping(value="/findAll", method=RequestMethod.GET)
 	public ResponseEntity<List<Alumnos_has_deportesDto>> findAll(){
 		List<Alumnos_has_deportes> alumnos_has_deportes = alumnos_has_deportesService.findAll();

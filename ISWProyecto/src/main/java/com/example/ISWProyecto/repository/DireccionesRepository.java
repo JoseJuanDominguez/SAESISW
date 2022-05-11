@@ -11,5 +11,4 @@ public interface DireccionesRepository extends JpaRepository<Direcciones, Intege
 	
 	@Query("SELECT a FROM Direcciones a where a.iddireccion = :iddireccion")
 	Direcciones findDireccion(@Param("iddireccion") Long iddireccion);
-
 }

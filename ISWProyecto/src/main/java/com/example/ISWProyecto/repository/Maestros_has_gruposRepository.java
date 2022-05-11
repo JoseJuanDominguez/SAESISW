@@ -10,6 +10,10 @@ public interface Maestros_has_gruposRepository extends JpaRepository<Maestros_ha
 	
 	@Query("SELECT a FROM Maestros_has_grupos a where a.maestros_rfc = :maestros_rfc and a.grupos_grupo = :grupos_grupo")
 	Maestros_has_grupos findMaestros_has_grupos(@Param("maestros_rfc") String maestros_rfc, @Param("grupos_grupo") String grupos_grupo);
+	@Query("SELECT a FROM Maestros_has_grupos a where a.maestros_rfc = :maestros_rfc")
+	Maestros_has_grupos findMaestros_rfc(@Param("maestros_rfc") String maestros_rfc);
 
+	@Query("SELECT a FROM Maestros_has_grupos a where a.grupos_grupo = :grupos_grupo")
+	Maestros_has_grupos findGrupos_grupo(@Param("grupos_grupo") String grupos_grupo);
 }
 

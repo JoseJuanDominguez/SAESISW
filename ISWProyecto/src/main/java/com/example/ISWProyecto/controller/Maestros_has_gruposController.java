@@ -33,7 +33,29 @@ public class Maestros_has_gruposController {
 		
 	}
 	
-	
+	@RequestMapping(value="/findMaestros_rfc/{maestros_rfc}", method= RequestMethod.GET)
+	public ResponseEntity<Maestros_has_gruposDto> findMaestros_rfc(@PathVariable("maestros_rfc") String maestros_rfc){
+		Maestros_has_grupos maestros_has_grupos = maestros_has_gruposService.findMaestros_rfc(maestros_rfc);
+		if(maestros_has_grupos == null) {
+			return new ResponseEntity<Maestros_has_gruposDto>(Maestros_has_gruposDto.getInstance(maestros_has_grupos), HttpStatus.NO_CONTENT);
+		}
+
+		Maestros_has_gruposDto maestros_has_gruposDto = Maestros_has_gruposDto.getInstance(maestros_has_grupos);
+		return new ResponseEntity<Maestros_has_gruposDto>(maestros_has_gruposDto, HttpStatus.OK);
+
+	}
+
+	@RequestMapping(value="/findGrupos_grupo/{grupos_grupo}", method= RequestMethod.GET)
+	public ResponseEntity<Maestros_has_gruposDto> findGrupos_grupo( @PathVariable("grupos_grupo") String grupos_grupo){
+		Maestros_has_grupos maestros_has_grupos = maestros_has_gruposService.findGrupos_grupo(grupos_grupo);
+		if(maestros_has_grupos == null) {
+			return new ResponseEntity<Maestros_has_gruposDto>(Maestros_has_gruposDto.getInstance(maestros_has_grupos), HttpStatus.NO_CONTENT);
+		}
+
+		Maestros_has_gruposDto maestros_has_gruposDto = Maestros_has_gruposDto.getInstance(maestros_has_grupos);
+		return new ResponseEntity<Maestros_has_gruposDto>(maestros_has_gruposDto, HttpStatus.OK);
+
+	}
 	
 	@RequestMapping(value="/findAll", method=RequestMethod.GET)
 	public ResponseEntity<List<Maestros_has_gruposDto>> findAll(){

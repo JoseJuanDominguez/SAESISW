@@ -20,7 +20,7 @@ public class U_Gestion_EscController {
 	private U_Gestion_EscServiceImpl u_gestion_escService;
 	
 	@RequestMapping(value="/findU_Gestion_Esc/{rfc}/{contrasena}", method= RequestMethod.GET)
-	public ResponseEntity<U_Gestion_EscDto> findAlumno(@PathVariable("rfc") String rfc, @PathVariable("contrasena") String contrasena){
+	public ResponseEntity<U_Gestion_EscDto> findU_Gestion_Esc(@PathVariable("rfc") String rfc, @PathVariable("contrasena") String contrasena){
 		U_Gestion_Esc u_gestion_esc = u_gestion_escService.findU_Gestion_Esc(rfc, contrasena);
 		if(u_gestion_esc == null) {
 			return new ResponseEntity<U_Gestion_EscDto>(U_Gestion_EscDto.getInstance(u_gestion_esc), HttpStatus.NO_CONTENT); 
@@ -31,7 +31,17 @@ public class U_Gestion_EscController {
 		
 	}
 	
-	
+	@RequestMapping(value="/findU_Gestion_EscById/{rfc}", method= RequestMethod.GET)
+	public ResponseEntity<U_Gestion_EscDto> findU_Gestion_EscById(@PathVariable("rfc") String rfc){
+		U_Gestion_Esc u_gestion_esc = u_gestion_escService.findU_Gestion_EscById(rfc);
+		if(u_gestion_esc == null) {
+			return new ResponseEntity<U_Gestion_EscDto>(U_Gestion_EscDto.getInstance(u_gestion_esc), HttpStatus.NO_CONTENT); 
+		}
+		
+		U_Gestion_EscDto u_gestion_escDto = U_Gestion_EscDto.getInstance(u_gestion_esc);
+		return new ResponseEntity<U_Gestion_EscDto>(u_gestion_escDto, HttpStatus.OK);
+		
+	}
 	
 	@RequestMapping(value="/findAll", method=RequestMethod.GET)
 	public ResponseEntity<List<U_Gestion_EscDto>> findAll(){

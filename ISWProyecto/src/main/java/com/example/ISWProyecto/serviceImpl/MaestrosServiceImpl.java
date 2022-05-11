@@ -20,7 +20,11 @@ public class MaestrosServiceImpl implements IMaestrosService {
 		// TODO Auto-generated method stub
 		return maestrosRepository.findMaestro(rfc, contrasena);
 	}
-
+	@Override
+	public Maestros findMaestroById(String rfc) {
+		// TODO Auto-generated method stub
+		return maestrosRepository.findMaestroById(rfc);
+	}
 	@Override
 	public List<Maestros> findAll() {
 		// TODO Auto-generated method stub

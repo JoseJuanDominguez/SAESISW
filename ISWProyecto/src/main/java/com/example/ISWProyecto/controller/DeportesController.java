@@ -23,9 +23,9 @@ public class DeportesController {
 	@Autowired 
 	private DeportesServiceImpl deportesService;
 	
-	@RequestMapping(value="/findDeportes/{iddeporte}/{nombre}", method= RequestMethod.GET)
-	public ResponseEntity<DeportesDto> findDeportes(@PathVariable("iddeporte") int iddeporte, @PathVariable("nombre") String nombre){
-		Deportes deportes = deportesService.findDeportes(iddeporte, nombre);
+	@RequestMapping(value="/findDeportes/{iddeporte}", method= RequestMethod.GET)
+	public ResponseEntity<DeportesDto> findDeportes(@PathVariable("iddeporte") int iddeporte){
+		Deportes deportes = deportesService.findDeportes(iddeporte);
 		if(deportes == null) {
 			return new ResponseEntity<DeportesDto>(DeportesDto.getInstance(deportes), HttpStatus.NO_CONTENT); 
 		}

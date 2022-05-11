@@ -17,9 +17,9 @@ public class Alumnos_has_gruposServiceImpl implements IAlumnos_has_grupos {
 	
 
 	@Override
-	public Alumnos_has_grupos findAlumnoHGById(String alumnos_boleta) {
+	public Alumnos_has_grupos findAlumnoHGById(String alumnos_boleta, String grupos_grupo) {
 		
-		return alumnoshgRepository.findAlumnoHGById(alumnos_boleta);
+		return alumnoshgRepository.findAlumnoHGById(alumnos_boleta, grupos_grupo);
 	}
 	@Override
 	public List<Alumnos_has_grupos> findAll() {

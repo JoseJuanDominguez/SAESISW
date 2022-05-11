@@ -17,8 +17,11 @@ public class U_Gestion_EscServiceImpl implements IU_Gestion_EscService{
 	@Override
 	public U_Gestion_Esc findU_Gestion_Esc(String rfc, String contrasena) {
 		// TODO Auto-generated method stub
-		return u_gestion_escRepository.findU_Gestion_Esc(rfc, contrasena)
-				;
+		return u_gestion_escRepository.findU_Gestion_Esc(rfc, contrasena);
+	}
+	public U_Gestion_Esc findU_Gestion_EscById(String rfc) {
+		// TODO Auto-generated method stub
+		return u_gestion_escRepository.findU_Gestion_EscById(rfc);
 	}
 
 	@Override

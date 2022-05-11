@@ -8,7 +8,8 @@ public interface IAlumnos_has_grupos {
 	
 	
 	
-	Alumnos_has_grupos findAlumnoHGById(String alumnos_boleta);
+	Alumnos_has_grupos findAlumnoHGById(String alumnos_boleta, String grupos_grupo);
+	
 	List<Alumnos_has_grupos> findAll();
 
 }

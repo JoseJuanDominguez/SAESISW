@@ -16,8 +16,8 @@ public class AlumnoServiceImpl implements IAlumnoService{
 	private AlumnoRepository alumnoRepository;
 
 	@Override
-	public Alumno findAlumno(String boleta, String password) {
-		return alumnoRepository.findAlumno(boleta, password);
+	public Alumno findAlumno(String boleta, String contrasena) {
+		return alumnoRepository.findAlumno(boleta, contrasena);
 	}
 
 	@Override
