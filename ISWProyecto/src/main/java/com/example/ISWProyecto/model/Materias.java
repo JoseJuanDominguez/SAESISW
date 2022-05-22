@@ -10,20 +10,21 @@ import javax.persistence.Table;
 @NamedQuery(name="Materias.findAll", query="SELECT a FROM Materias a")
 public class Materias {
 	
-	@Id 
+	@Id
 	private String idmateria;
-	private String nombre;
+	 
+	private String nombre_m;
 	public String getIdmateria() {
 		return idmateria;
 	}
 	public void setIdmateria(String idmateria) {
 		this.idmateria = idmateria;
 	}
-	public String getNombre() {
-		return nombre;
+	public String getNombre_m() {
+		return nombre_m;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombre_m(String nombre_m) {
+		this.nombre_m = nombre_m;
 	}
 
 }

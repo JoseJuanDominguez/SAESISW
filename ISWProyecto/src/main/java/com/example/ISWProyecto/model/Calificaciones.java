@@ -27,75 +27,69 @@ public class Calificaciones {
 
 	private Date fecha;
 
-	private float ets;
+	private Float ets;
 
-	private float extra;
+	private Float extra;
 	@Id
 	private String materias_idmateria;
-
+	private String alumnos_boleta;
+	
+	public String getAlumnos_boleta() {
+		return alumnos_boleta;
+	}
+	public void setAlumnos_boleta(String alumnos_boleta) {
+		this.alumnos_boleta = alumnos_boleta;
+	}
 	public float getPrimerdep() {
 		return primerdep;
 	}
-
 	public void setPrimerdep(float primerdep) {
 		this.primerdep = primerdep;
 	}
-
 	public float getSegundodep() {
 		return segundodep;
 	}
-
 	public void setSegundodep(float segundodep) {
 		this.segundodep = segundodep;
 	}
-
 	public float getTercerdep() {
 		return tercerdep;
 	}
-
 	public void setTercerdep(float tercerdep) {
 		this.tercerdep = tercerdep;
 	}
-
 	public int getKardex() {
 		return kardex;
 	}
-
 	public void setKardex(int kardex) {
 		this.kardex = kardex;
 	}
-
 	public Date getFecha() {
 		return fecha;
 	}
-
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-
-	public float getEts() {
+	public Float getEts() {
 		return ets;
 	}
-
-	public void setEts(float ets) {
+	public void setEts(Float ets) {
 		this.ets = ets;
 	}
-
-	public float getExtra() {
+	public Float getExtra() {
 		return extra;
 	}
-
-	public void setExtra(float extra) {
+	public void setExtra(Float extra) {
 		this.extra = extra;
 	}
-
 	public String getMaterias_idmateria() {
 		return materias_idmateria;
 	}
-
 	public void setMaterias_idmateria(String materias_idmateria) {
 		this.materias_idmateria = materias_idmateria;
 	}
+
+	
 
 
 

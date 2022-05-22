@@ -2,8 +2,10 @@ package com.example.ISWProyecto.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import com.example.ISWProyecto.model.Alumnos_has_grupos;
+import com.example.ISWProyecto.model.Grupos;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Alumnos_has_gruposDto {
@@ -12,12 +14,14 @@ public class Alumnos_has_gruposDto {
 	private String alumnos_boleta;
 	@JsonProperty("grupos_grupo")
 	private String grupos_grupo;
-	
+
 	public static Alumnos_has_gruposDto getInstance(Alumnos_has_grupos alumnos_has_grup) {
 		Alumnos_has_gruposDto alumnos_has_gruposdto = new Alumnos_has_gruposDto();
 		if(alumnos_has_grup!=null) {
 			alumnos_has_gruposdto.setAlumnos_boleta(alumnos_has_grup.getAlumnos_boleta());
 			alumnos_has_gruposdto.setGrupos_grupo(alumnos_has_grup.getGrupos_grupo());
+
+			
 		}
 		return alumnos_has_gruposdto;
 		
@@ -31,6 +35,7 @@ public class Alumnos_has_gruposDto {
 		return alumnos_has_gruposdto;
 		
 	}
+
 	public String getAlumnos_boleta() {
 		return alumnos_boleta;
 	}
@@ -46,5 +51,7 @@ public class Alumnos_has_gruposDto {
 	public void setGrupos_grupo(String grupos_grupo) {
 		this.grupos_grupo = grupos_grupo;
 	}
+
+
 	
 }

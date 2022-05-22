@@ -11,8 +11,8 @@ public class MateriasDto {
 	
 	@JsonProperty("idmateria")
 	private String idmateria;
-	@JsonProperty("nombre")
-	private String nombre;
+	@JsonProperty("nombre_m")
+	private String nombrem_m;
 
 	
 	
@@ -21,7 +21,7 @@ public class MateriasDto {
 		MateriasDto materiasdto = new MateriasDto();
 		if(materia!=null) {
 			materiasdto.setIdmateria(materia.getIdmateria());
-			materiasdto.setNombre(materia.getNombre());
+			materiasdto.setNombrem_m(materia.getNombre_m());
 		}
 		
 		
@@ -36,31 +36,22 @@ public class MateriasDto {
 		}
 		return materiasDto;
 	}
-	
-	
-	
-	
+
 	public String getIdmateria() {
 		return idmateria;
 	}
+
 	public void setIdmateria(String idmateria) {
 		this.idmateria = idmateria;
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public String getNombrem_m() {
+		return nombrem_m;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+	public void setNombrem_m(String nombrem_m) {
+		this.nombrem_m = nombrem_m;
+	}
 }
+	
+	

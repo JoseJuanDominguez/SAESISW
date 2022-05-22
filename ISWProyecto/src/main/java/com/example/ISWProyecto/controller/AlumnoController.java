@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.ISWProyecto.dto.AlumnoDto;
 import com.example.ISWProyecto.model.Alumno;
 import com.example.ISWProyecto.serviceImpl.AlumnoServiceImpl;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/Alumno")
 public class AlumnoController {
@@ -32,7 +33,17 @@ public class AlumnoController {
 		
 	}
 	
-	
+	@RequestMapping(value="/findAlumnoByBoleta/{boleta}", method= RequestMethod.GET)
+	public ResponseEntity<AlumnoDto> findAlumnoByBoleta(@PathVariable("boleta") String boleta){
+		Alumno alumno = alumnoService.findAlumnoByBoleta(boleta);
+		if(alumno == null) {
+			return new ResponseEntity<AlumnoDto>(AlumnoDto.getInstance(alumno), HttpStatus.NO_CONTENT); 
+		}
+		
+		AlumnoDto alumnoDto = AlumnoDto.getInstance(alumno);
+		return new ResponseEntity<AlumnoDto>(alumnoDto, HttpStatus.OK);
+		
+	}
 	
 	@RequestMapping(value="/findAll", method=RequestMethod.GET)
 	public ResponseEntity<List<AlumnoDto>> findAll(){

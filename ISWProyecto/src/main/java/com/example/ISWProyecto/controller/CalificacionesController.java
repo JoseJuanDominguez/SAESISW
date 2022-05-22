@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.ISWProyecto.dto.CalificacionesDto;
 import com.example.ISWProyecto.model.Calificaciones;
 import com.example.ISWProyecto.serviceImpl.CalificacionesServiceImpl;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/Calificaciones")
 public class CalificacionesController {
@@ -37,7 +38,7 @@ public class CalificacionesController {
 	public ResponseEntity<List<CalificacionesDto>> findAll(){
 		List<Calificaciones> calificaciones = calificacionesService.findAll();
 		if(calificaciones.isEmpty()) {
-			return new ResponseEntity<List<CalificacionesDto>>(HttpStatus.NOT_FOUND);
+		return new ResponseEntity<List<CalificacionesDto>>(HttpStatus.NOT_FOUND);
 		}
 
 		List<CalificacionesDto> calificacionesDto = CalificacionesDto.getInstance(calificaciones);

@@ -14,11 +14,11 @@ import javax.persistence.Table;
 @NamedQuery(name="Grupos_has_materias.findAll", query="SELECT a FROM Grupos_has_materias a")
 public class Grupos_has_materias {
 	
-	@Id
+	
 	private String grupos_grupo;
 	
 	private String materias_idmateria;
-	
+	@Id
 	private String dia;
 	
 	private String hora_inicio;

@@ -30,13 +30,24 @@ public class CalificacionesDto {
 	private Date fecha;
 
 	@JsonProperty("ets")
-	private float ets;
+	private Float ets;
 
 	@JsonProperty("extra")
-	private float extra;
+	private Float extra;
 
 	@JsonProperty("materias_idmateria")
 	private String materias_idmateria;
+	
+	@JsonProperty("alumnos_boleta")
+	private String alumnos_boleta;
+
+	public String getAlumnos_boleta() {
+		return alumnos_boleta;
+	}
+
+	public void setAlumnos_boleta(String alumnos_boleta) {
+		this.alumnos_boleta = alumnos_boleta;
+	}
 
 	public static CalificacionesDto getInstance(Calificaciones calificaciones) {
 		CalificacionesDto calificacionesDto = new CalificacionesDto();
@@ -49,6 +60,7 @@ public class CalificacionesDto {
 			calificacionesDto.setEts(calificaciones.getEts());
 			calificacionesDto.setExtra(calificaciones.getExtra());
 			calificacionesDto.setMaterias_idmateria(calificaciones.getMaterias_idmateria());
+			calificacionesDto.setAlumnos_boleta(calificaciones.getAlumnos_boleta());
 		}
 		return calificacionesDto;
 
@@ -103,19 +115,19 @@ public class CalificacionesDto {
 		this.fecha = fecha;
 	}
 
-	public float getEts() {
+	public Float getEts() {
 		return ets;
 	}
 
-	public void setEts(float ets) {
+	public void setEts(Float ets) {
 		this.ets = ets;
 	}
 
-	public float getExtra() {
+	public Float getExtra() {
 		return extra;
 	}
 
-	public void setExtra(float extra) {
+	public void setExtra(Float extra) {
 		this.extra = extra;
 	}
 
@@ -126,7 +138,6 @@ public class CalificacionesDto {
 	public void setMaterias_idmateria(String materias_idmateria) {
 		this.materias_idmateria = materias_idmateria;
 	}
-
 
 
 }

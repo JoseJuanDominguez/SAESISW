@@ -10,7 +10,7 @@ public interface IAlumnoService {
 	
 	
 	Alumno findAlumno(String boleta, String contrasena);
-	
+	Alumno findAlumnoByBoleta(String boleta);
 	List<Alumno> findAll();
 
 }

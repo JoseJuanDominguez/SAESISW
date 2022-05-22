@@ -12,7 +12,7 @@ import com.example.ISWProyecto.service.IAlumnos_has_Calificaciones;
 public class Alumnos_has_CalificacionesServiceImpl implements IAlumnos_has_Calificaciones {
 
 	@Autowired
-	Alumnos_has_CalificacionesRepository alumnoshcRepository;
+	private Alumnos_has_CalificacionesRepository alumnoshcRepository;
 
 
 	@Override

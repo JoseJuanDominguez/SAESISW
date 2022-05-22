@@ -15,8 +15,8 @@ public class Grupos_has_materiasServiceImpl implements IGrupos_has_materiasServi
 	private Grupos_has_materiasRepository grupos_has_materiasRepository;
 
 	@Override
-	public Grupos_has_materias findGrupos_has_materias(String grupos_grupo, String materias_idmateria) {
-		return grupos_has_materiasRepository.findGrupos_has_materias(grupos_grupo, materias_idmateria);
+	public List< Grupos_has_materias> findGrupos_has_materias(String grupos_grupo) {
+		return grupos_has_materiasRepository.findGrupos_has_materias(grupos_grupo);
 	}
 	@Override
 	public Grupos_has_materias findGrupos_grupo(String grupos_grupo) {

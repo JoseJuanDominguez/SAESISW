@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +16,7 @@ import com.example.ISWProyecto.model.Alumno;
 import com.example.ISWProyecto.model.Deportes;
 import com.example.ISWProyecto.serviceImpl.AlumnoServiceImpl;
 import com.example.ISWProyecto.serviceImpl.DeportesServiceImpl;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/Deportes")
 public class DeportesController {

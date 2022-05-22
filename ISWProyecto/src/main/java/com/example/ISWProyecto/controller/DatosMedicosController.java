@@ -6,6 +6,7 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ import com.example.ISWProyecto.dto.DatosMedicosDto;
 import com.example.ISWProyecto.model.Alumno;
 import com.example.ISWProyecto.model.DatosMedicos;
 import com.example.ISWProyecto.serviceImpl.DatosMedicosServiceImpl;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/DatosMedicos")
 public class DatosMedicosController {

@@ -17,12 +17,22 @@ public class AlumnoServiceImpl implements IAlumnoService{
 
 	@Override
 	public Alumno findAlumno(String boleta, String contrasena) {
-		return alumnoRepository.findAlumno(boleta, contrasena);
+		// TODO alumnoRepository-generated method stub
+		return alumnoRepository.findAlumno( boleta,  contrasena);
+	}
+
+	@Override
+	public Alumno findAlumnoByBoleta(String boleta) {
+		// TODO Auto-generated method stub
+		return alumnoRepository.findAlumnoByBoleta(boleta);
 	}
 
 	@Override
 	public List<Alumno> findAll() {
+		// TODO Auto-generated method stub
 		return alumnoRepository.findAll();
 	}
+
+
 
 }
