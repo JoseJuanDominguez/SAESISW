@@ -25,9 +25,9 @@ public class HorarioAlumnoController {
 	@Autowired 
 	private HorarioAlumnoServiceImpl horarioAlumnoService;
 	
-	@RequestMapping(value="/findHorarioAlumno/{boleta}/{grupos_grupo}", method= RequestMethod.GET)
-	public ResponseEntity<List<HorarioAlumnoDto>> findHorarioAlumno(@PathVariable("boleta") String boleta, @PathVariable("grupos_grupo") String grupos_grupo){
-		List<HorarioAlumno> horarioAlumno = horarioAlumnoService.findHorarioAlumno(boleta,grupos_grupo);
+	@RequestMapping(value="/findHorarioAlumno/{alumnos_boleta}", method= RequestMethod.GET)
+	public ResponseEntity<List<HorarioAlumnoDto>> findHorarioAlumno(@PathVariable("alumnos_boleta") String alumnos_boleta){
+		List<HorarioAlumno> horarioAlumno = horarioAlumnoService.findHorarioAlumno(alumnos_boleta);
 		if(horarioAlumno.isEmpty()) {
 			return new ResponseEntity<List<HorarioAlumnoDto>>(HttpStatus.NOT_FOUND); 
 		}

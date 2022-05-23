@@ -15,13 +15,16 @@ public class CalificacionesServiceImpl implements ICalificacionesService{
 	@Autowired
 	private CalificacionesRepository calificacionesRepository;
 
-	@Override
-	public Calificaciones findCalificaciones(String materias_idmateria) {
-		return calificacionesRepository.findCalificaciones(materias_idmateria);
-	}
+
 
 	@Override
 	public List<Calificaciones> findAll() {
 		return calificacionesRepository.findAll();
+	}
+
+	@Override
+	public List<Calificaciones> findCalificaciones(String alumnos_boleta) {
+		// TODO Auto-generated method stub
+		return calificacionesRepository.findCalificaciones(alumnos_boleta);
 	}
 }

@@ -6,7 +6,7 @@ import com.example.ISWProyecto.model.Calificaciones;
 
 public interface ICalificacionesService {
 
-	Calificaciones findCalificaciones(String materias_idmateria);
+	List<Calificaciones> findCalificaciones(String alumnos_boleta);
 
 	List<Calificaciones> findAll();
 

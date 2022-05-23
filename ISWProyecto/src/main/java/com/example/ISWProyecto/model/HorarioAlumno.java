@@ -6,29 +6,18 @@ import javax.persistence.Id;
 @Entity
 public class HorarioAlumno {
 	
-	//private String boleta;
-	
     private String grupos_grupo;
 	private String nombre; 
 	private String paterno; 
 	private String materno; 
-	
-	private String idmateria;
-	private String nombre_m; 
 	@Id
+	private String materias_idmateria;
+	private String nombre_m; 
 	private String dia;
 	private String hora_inicio;
 	private String hora_fin;
 	private String salon;
 	
-	/*public String getBoleta() {
-		return boleta;
-	}
-
-	public void setBoleta(String boleta) {
-		this.boleta = boleta;
-	}*/
-
 	public String getNombre() {
 		return nombre;
 	}
@@ -61,12 +50,12 @@ public class HorarioAlumno {
 		this.grupos_grupo = grupos_grupo;
 	}
 
-	public String getIdmateria() {
-		return idmateria;
+	public String getMaterias_idmateria() {
+		return materias_idmateria;
 	}
 
-	public void setIdmateria(String idmateria) {
-		this.idmateria = idmateria;
+	public void setMaterias_idmateria(String materias_idmateria) {
+		this.materias_idmateria = materias_idmateria;
 	}
 
 	public String getDia() {

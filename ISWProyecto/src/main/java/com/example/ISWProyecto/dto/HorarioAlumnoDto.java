@@ -7,8 +7,7 @@ import com.example.ISWProyecto.model.HorarioAlumno;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class HorarioAlumnoDto {
-	/*@JsonProperty("boleta")
-	private String boleta; */
+
 	@JsonProperty("grupos_grupo")
     private String grupos_grupo;
 	@JsonProperty("nombre")
@@ -17,8 +16,8 @@ public class HorarioAlumnoDto {
 	private String paterno; 
 	@JsonProperty("materno")
 	private String materno; 
-	@JsonProperty("idmateria")
-	private String idmateria;
+	@JsonProperty("materias_idmateria")
+	private String materias_idmateria;
 	@JsonProperty("nombre_m")
 	private String nombre_m;
 	@JsonProperty("dia")
@@ -34,12 +33,11 @@ public class HorarioAlumnoDto {
 	public static HorarioAlumnoDto getInstance(HorarioAlumno horarioAlumno) {
 		HorarioAlumnoDto horarioAlumnoDto = new HorarioAlumnoDto();
 		if(horarioAlumno!=null) {
-			//horarioAlumnoDto.setBoleta(horarioAlumno.getBoleta());
 			horarioAlumnoDto.setDia(horarioAlumno.getDia());
 			horarioAlumnoDto.setGrupos_grupo(horarioAlumno.getGrupos_grupo());
 			horarioAlumnoDto.setHora_fin(horarioAlumno.getHora_fin());
 			horarioAlumnoDto.setHora_inicio(horarioAlumno.getHora_inicio());
-			horarioAlumnoDto.setIdmateria(horarioAlumno.getIdmateria());
+			horarioAlumnoDto.setMaterias_idmateria(horarioAlumno.getMaterias_idmateria());
 			horarioAlumnoDto.setMaterno(horarioAlumno.getMaterno());
 			horarioAlumnoDto.setNombre(horarioAlumno.getNombre());
 			horarioAlumnoDto.setPaterno(horarioAlumno.getPaterno());
@@ -68,16 +66,6 @@ public class HorarioAlumnoDto {
 		this.nombre_m = nombre_m;
 	}
 
-
-	/*
-	public String getBoleta() {
-		return boleta;
-	}
-
-	public void setBoleta(String boleta) {
-		this.boleta = boleta;
-	}
-*/
 	public String getNombre() {
 		return nombre;
 	}
@@ -110,12 +98,12 @@ public class HorarioAlumnoDto {
 		this.grupos_grupo = grupos_grupo;
 	}
 
-	public String getIdmateria() {
-		return idmateria;
+	public String getMaterias_idmateria() {
+		return materias_idmateria;
 	}
 
-	public void setIdmateria(String idmateria) {
-		this.idmateria = idmateria;
+	public void setMaterias_idmateria(String materias_idmateria) {
+		this.materias_idmateria = materias_idmateria;
 	}
 
 	public String getDia() {

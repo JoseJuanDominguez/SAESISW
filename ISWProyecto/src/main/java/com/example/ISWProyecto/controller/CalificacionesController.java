@@ -22,15 +22,15 @@ public class CalificacionesController {
 	@Autowired
 	private CalificacionesServiceImpl calificacionesService;
 
-	@RequestMapping(value="/findCalificaciones/{materias_idmateria}", method= RequestMethod.GET)
-	public ResponseEntity<CalificacionesDto> findCalificaciones( @PathVariable("materias_idmateria") String materias_idmateria){
-		Calificaciones calificaciones = calificacionesService.findCalificaciones(materias_idmateria);
-		if(calificaciones == null) {
-			return new ResponseEntity<CalificacionesDto>(CalificacionesDto.getInstance(calificaciones), HttpStatus.NO_CONTENT);
+	@RequestMapping(value="/findCalificaciones/{alumnos_boleta}", method= RequestMethod.GET)
+	public ResponseEntity<List<CalificacionesDto>> findCalificaciones( @PathVariable("alumnos_boleta") String alumnos_boleta){
+		List<Calificaciones> calificaciones = calificacionesService.findCalificaciones(alumnos_boleta);
+		if(calificaciones.isEmpty()) {
+			return new ResponseEntity<List<CalificacionesDto>>(HttpStatus.NOT_FOUND);
 		}
 
-		CalificacionesDto calificacionesDto = CalificacionesDto.getInstance(calificaciones);
-		return new ResponseEntity<CalificacionesDto>(calificacionesDto, HttpStatus.OK);
+		List<CalificacionesDto> calificacionesDto = CalificacionesDto.getInstance(calificaciones);
+		return new ResponseEntity<List<CalificacionesDto>>(calificacionesDto, HttpStatus.OK);
 
 	}
 

@@ -21,9 +21,9 @@ public class HorarioAlumnoServiceImpl implements IHorarioAlumnoService{
 	}
 
 	@Override
-	public List<HorarioAlumno> findHorarioAlumno(String boleta, String grupos_grupo) {
+	public List<HorarioAlumno> findHorarioAlumno(String alumnos_boleta) {
 		// TODO Auto-generated method stub
-		return horarioAlumnoRepository.findHorarioAlumno(boleta, grupos_grupo);
+		return horarioAlumnoRepository.findHorarioAlumno(alumnos_boleta);
 	}
 	
 
