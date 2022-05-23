@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.ISWProyecto.dto.AlumnoDto;
+
 import com.example.ISWProyecto.dto.MateriasDto;
-import com.example.ISWProyecto.model.Alumno;
+
 import com.example.ISWProyecto.model.Materias;
 import com.example.ISWProyecto.serviceImpl.MateriasServiceImpl;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
